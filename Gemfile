@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.0'
 gem 'sqlite3'
 
@@ -15,6 +14,8 @@ gem 'jbuilder', '~> 2.0'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem "uikit-sass-rails"
+gem 'devise', '~> 3.4.1'
 
 group :development, :test do
   gem 'byebug'
@@ -22,6 +23,9 @@ group :development, :test do
   gem 'spring'
 end
 
-gem "uikit-sass-rails"
-gem 'devise', '~> 3.4.1'
+group :production do
+	gem 'pg', '0.17.1'
+	gem 'rails_12factor', '0.0.2'
+end
+
 
