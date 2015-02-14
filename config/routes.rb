@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :emails
+
   devise_for :users
   resources :users, only: [:index, :show]
   root "users#index"

@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<div class="uk-visible-small">
+<h1>Listing Emails</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Starts at</th>
+      <th>Qty</th>
+      <th>Pre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @emails.each do |email| %>
+      <tr>
+        <td><%= email.name %></td>
+        <td><%= email.starts_at %></td>
+        <td><%= email.qty %></td>
+        <td><%= email.pre %></td>
+        <td><%= link_to 'Show', email %></td>
+        <td><%= link_to 'Edit', edit_email_path(email) %></td>
+        <td><%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+
+<%= month_calendar events: @emails, table: {class: "uk-table table-shadow uk-animation-scale uk-animation-top-center"}, header: {class: "uk-text-center table-month-heading uk-margin-large-top"} do |date, emails| %>
+  <%= date.strftime("%-d") %>
+  <div class="uk-scrollable-box">
+    <ul class="uk-list uk-list-line">
+      <% emails.each do |email| %>
+        <li>
+          <% if user_signed_in? && current_user.admin? %>
+              <i class="uk-icon-envelope-o curse" data-uk-tooltip="{pos:'left'}" title="Quantity: <%= email.pre %> <%= email.qty %>"></i> <%= link_to email.name, email %>
+            <% else %>
+              <i class="uk-icon-envelope-o"></i> <%= link_to email.name, email %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<br>
+
+<%= link_to 'New Email', new_email_path %>

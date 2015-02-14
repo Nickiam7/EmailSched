@@ -1,0 +1,33 @@
+<%= form_for(@email, html: { class: 'uk-form' }) do |f| %>
+  <% if @email.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@email.errors.count, "error") %> prohibited this email from being saved:</h2>
+
+      <ul>
+      <% @email.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="uk-form-row">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="uk-form-row">
+  <label for="email_starts_at">Starts at</label><br>
+    <input type="text" name="email[starts_at]" id="email_starts_at" data-uk-datepicker="{weekstart:0,}" autocomplete="off"/>
+  </div>
+  <div class="uk-form-row">
+    <%= f.label :qty %><br>
+    <%= f.number_field :qty %>
+  </div>
+  <div class="uk-form-row">
+    <%= f.label :pre %><br>
+    <%= f.text_field :pre %>
+  </div>
+  <div class="uk-form-row">
+    <%= f.button class: "uk-button uk-button-primary", name: :commit, value: "Schedule Email" %>
+  </div>
+<% end %>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_filter :admin, only: :show
+	before_action :admin, only: :show
 
 	def index
 		@users = User.all
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 	private
 		def admin
 			@user = current_user
-			unless user_signed_in? && @user.admin == true
+			if user_signed_in? && @user.admin == true
 				redirect_to root_path
 				flash[:alert] = "You do not have permission to access this page."
 			end

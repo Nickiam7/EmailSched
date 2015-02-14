@@ -8,6 +8,8 @@
 <hr>
 <% if user_signed_in? %>
 	<%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "uk-button" %>
+	<%= link_to "New Email", new_email_path, class: "uk-button uk-button-success" %>
+	<%= link_to "Emails", emails_path, class: "uk-button uk-button-success" %>
 <% else %>
 	<%= link_to "Log In", new_user_session_path, class: "uk-button uk-button-primary" %>
 	<%= link_to "New User", new_user_registration_path, class: "uk-button uk-button-success" %> 
