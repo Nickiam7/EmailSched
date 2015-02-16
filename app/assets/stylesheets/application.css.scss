@@ -6,12 +6,11 @@
 
 @import "uikit/gradient";
 
- /** Devise Errors **/
-
 body {
     background-color:#f2f6f7;
 }
 
+ /** Devise Errors **/
 #error_explanation {
     border-radius: 4px;
     margin-bottom: 15px;
@@ -26,7 +25,21 @@ body {
     color: #d85030;
 }
 
-/** END Devise Errors **/
+.devise_links {
+    color:#b5c7cc;
+    font-size: 9px;
+}
+
+.devise_links a {
+    color:#cad6da;
+    font-size: 9px;
+}
+
+.uk-panel-box-secondary {
+    color: #a4a4a4;
+}
+
+/** END Devise **/
 
 .uk-form input:not([type]), .uk-form input[type="text"], .uk-form input[type="password"], .uk-form input[type="datetime"], .uk-form input[type="datetime-local"], .uk-form input[type="date"], .uk-form input[type="month"], .uk-form input[type="time"], .uk-form input[type="week"], .uk-form input[type="number"], .uk-form input[type="email"], .uk-form input[type="url"], .uk-form input[type="search"], .uk-form input[type="tel"], .uk-form input[type="color"] {
     background: none repeat scroll 0 0 #ffffff;
@@ -39,12 +52,12 @@ body {
     transition: all 0.2s linear 0s;
 }
 
+
  /** Calendar Styles **/
-
-
 .table-shadow {
-    box-shadow: 0 0 0 1px rgba(59, 67, 77, 0.1), 0 1px 4px rgba(59, 67, 77, 0.2);
-}
+    -webkit-box-shadow: 0px 2px 6px 1px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0px 2px 6px 1px rgba(0,0,0,0.23);
+    box-shadow: 0px 2px 6px 1px rgba(0,0,0,0.23);}
 
  .uk-table td {
     border: 1px solid #ddd;
@@ -67,7 +80,6 @@ body {
     box-shadow: 0 1px rgba(255, 255, 255, 0.2) inset, 0 0 0 1px rgba(255, 255, 255, 0.06) inset, 0 1px rgba(0, 0, 0, 0.04);
     color: white;
     font-weight: bold;
-
     text-shadow: 0 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -122,9 +134,18 @@ body {
 
  /** END Calendar Styles **/
 
+ /** Forms **/
+
 .uk-form input:focus:not([type]), .uk-form input[type="text"]:focus, .uk-form input[type="password"]:focus, .uk-form input[type="datetime"]:focus, .uk-form input[type="datetime-local"]:focus, .uk-form input[type="date"]:focus, .uk-form input[type="month"]:focus, .uk-form input[type="time"]:focus, .uk-form input[type="week"]:focus, .uk-form input[type="number"]:focus, .uk-form input[type="email"]:focus, .uk-form input[type="url"]:focus, .uk-form input[type="search"]:focus, .uk-form input[type="tel"]:focus, .uk-form input[type="color"]:focus {
     background: none repeat scroll 0 0 #f5fbfe;
     border-color: #99baca;
     color: #99baca;
     outline: 0 none;
 }
+
+.shadow {
+box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+

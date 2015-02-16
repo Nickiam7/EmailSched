@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 	private
 		def admin
 			@user = current_user
-			if user_signed_in? && @user.admin == true
+			unless user_signed_in? && @user.admin == true
 				redirect_to root_path
 				flash[:alert] = "You do not have permission to access this page."
 			end
