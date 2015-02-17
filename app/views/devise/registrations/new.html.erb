@@ -1,4 +1,4 @@
-<div class="uk-grid uk-margin-large-top uk-height-viewport">
+<div class="uk-grid uk-height-viewport">
   <div class="uk-width-medium-1-3 uk-push-1-3">
     <div class="uk-text-center">
       <%= image_tag("logo.png", class: "uk-margin-bottom uk-margin-large-top logo") %>
@@ -8,9 +8,10 @@
   <%= devise_error_messages! %>
   <%= render partial: "shared/devise_flash" %>
  <div class="uk-form-row">
-    <%= f.text_field :firstname, placeholder: "First Name" %>
-
-    <%= f.text_field :lastname, placeholder: "Last Name" %>
+    <%= f.text_field :firstname, placeholder: "First Name", class: "uk-width-1-1" %>
+  </div>
+  <div class="uk-form-row">
+    <%= f.text_field :lastname, placeholder: "Last Name", class: "uk-width-1-1" %>
   </div>
 
   <div class="uk-form-row">

@@ -8,6 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 	<body>
+		<%= render partial: "layouts/navbar" unless devise_controller? %>
 		<div class="uk-container uk-container-center">
 			<%= yield %>
 		</div>

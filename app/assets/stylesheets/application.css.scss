@@ -132,7 +132,34 @@ body {
 
 .curse {cursor: default;}
 
+.email-count {
+    color: #b5b5b5;
+}
+
+.date_number {
+    background: linear-gradient(to bottom, #49a4fc, #208be7) repeat scroll 0 0 #2c92ed;
+    padding: 0 5px;
+    color: white;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    border-radius:2px;
+    border-color: #1d87e2 #187ed9 #1670c1;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px rgba(255, 255, 255, 0.2) inset, 0 0 0 1px rgba(255, 255, 255, 0.06) inset, 0 1px rgba(0, 0, 0, 0.04);
+}
+
  /** END Calendar Styles **/
+
+ /** Navbar **/
+ .uk-navbar-brand {
+    color:#566062;
+ }
+
+ .uk-navbar-nav > li > a {
+    color:#566062;
+ }
+
+  /** END Navbar **/
 
  /** Forms **/
 

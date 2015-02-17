@@ -1,22 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<%= month_calendar events: @emails, table: {class: "uk-table table-shadow uk-animation-scale uk-animation-top-center"}, header: {class: "uk-text-center table-month-heading uk-margin-large-top"} do |date, emails| %>
-  <%= date.strftime("%-d") %>
-  <div class="uk-scrollable-box">
-    <ul class="uk-list uk-list-line">
-      <% emails.each do |email| %>
-        <li>
-          <% if user_signed_in? && current_user.admin? %>
-              <i class="uk-icon-envelope-o curse" data-uk-tooltip="{pos:'left'}" title="Quantity: <%= email.pre %> <%= email.qty %>"></i> <%= link_to email.name, email %>
-            <% else %>
-              <i class="uk-icon-envelope-o"></i> <%= link_to email.name, email %>
+<div class="uk-grid">
+  <div class="uk-width-medium-1-1">
+    <%= month_calendar events: @emails, table: {class: "uk-table table-shadow uk-animation-scale uk-animation-top-center"}, header: {class: "uk-text-center table-month-heading uk-margin-large-top"} do |date, emails| %>
+      <span class="date_number"><%= date.strftime("%-d") %></span> <span class="uk-float-right email-count"><i class="uk-icon-envelope-o"></i> <%= emails.count %></span>
+      <div class="uk-scrollable-box">
+        <ul class="uk-list uk-list-line">
+          <% emails.each do |email| %>
+            <li>
+              <% if user_signed_in? && current_user.admin? %>
+                  <i class="uk-icon-envelope-o curse" data-uk-tooltip="{pos:'left'}" title="Quantity: <%= email.pre %> <%= email.qty %>"></i> <%= link_to email.name, email %>
+                <% else %>
+                  <i class="uk-icon-envelope-o"></i> <%= link_to email.name, email %>
+              <% end %>
+            </li>
           <% end %>
-        </li>
-      <% end %>
-    </ul>
+        </ul>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
 <br>
 
 <%= link_to 'New Email', new_email_path %> 
 | <%= link_to 'Home', users_path, class: "uk-button" %>
+
