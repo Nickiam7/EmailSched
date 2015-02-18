@@ -5,8 +5,13 @@
 		<div class="uk-navbar-flip">
 			<ul class="uk-navbar-nav">
 				<li>
+					<%= link_to new_email_path do %>
+						<i class="uk-icon-envelope-o"></i> New Email
+					<% end %>
+				</li>
+				<li>
 					<%= link_to root_path do %>
-						<i class="uk-icon-calendar"></i> Calendar
+						<i class="uk-icon-calendar-o"></i> Calendar
 					<% end %>
 				</li>
 			</ul>
@@ -48,11 +53,7 @@
 			</div>
 		</div>
 
-		<div class="uk-navbar-content uk-navbar-center">
-			<%= link_to new_email_path, class: "uk-button uk-button-success" do %>
-			<i class="uk-icon-envelope"></i> Schedule Email
-			<% end %>
-		</div>
+	
 
 	</div>
 </nav>

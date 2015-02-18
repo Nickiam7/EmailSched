@@ -151,17 +151,55 @@ body {
  /** END Calendar Styles **/
 
  /** Navbar **/
+
+ .uk-navbar {
+  background: #fdfdfd;
+  color: #444444;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 10px 0;
+}
+
  .uk-navbar-brand {
     color:#566062;
+ }
+
+  .uk-navbar-brand:hover {
+    color:#92a1a4;
  }
 
  .uk-navbar-nav > li > a {
     color:#566062;
  }
 
- .uk-dropdown {
-    border-radius: 0 0 4px 4px;
+  .uk-navbar-nav > li > a:hover {
+    color: #92a1a4;
+    border: 1px solid #fdfdfd;
+    box-shadow: none;
  }
+
+ .uk-dropdown-navbar {
+    border-radius: 2px;
+    margin-top:8px;
+ }
+ 
+ .uk-dropdown-navbar:after {
+    background: #ffffff;
+    border-radius: 1px;
+    content: "";
+    display: block;
+    height: 8px;
+    right: 30px;
+    position: absolute;
+    top: -5px;
+    transform: rotate(45deg);
+    width: 8px;
+    border-top:1px solid #cbcbcb;
+    border-left:1px solid #cbcbcb;
+    z-index: -1
+}
+
 
   /** END Navbar **/
 
