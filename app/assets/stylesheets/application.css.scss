@@ -148,6 +148,18 @@ body {
     box-shadow: 0 1px rgba(255, 255, 255, 0.2) inset, 0 0 0 1px rgba(255, 255, 255, 0.06) inset, 0 1px rgba(0, 0, 0, 0.04);
 }
 
+
+.uk-datepicker-table a.uk-active {
+    background: linear-gradient(to bottom, #49a4fc, #208be7) repeat scroll 0 0 #2c92ed;
+    border-color: #1d87e2 #187ed9 #1670c1;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px rgba(255, 255, 255, 0.2) inset, 0 0 0 1px rgba(255, 255, 255, 0.06) inset, 0 1px rgba(0, 0, 0, 0.04);
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
  /** END Calendar Styles **/
 
  /** Navbar **/
@@ -190,7 +202,7 @@ body {
     content: "";
     display: block;
     height: 8px;
-    right: 30px;
+    right: 25px;
     position: absolute;
     top: -5px;
     transform: rotate(45deg);
