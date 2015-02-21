@@ -1,2 +1,9 @@
-<h1>Hello, <%= @user.firstname %></h1>
+<h1>Hello, <%= @user.firstname %>  | <%= @user.emails.count %></h1>
 <hr>
+
+<% @user.emails.each do |email| %>
+	<dl class="uk-description-list-line">
+		<dt><%= link_to email.name, email %></dt>
+		<dd>Date: <%= email.starts_at.strftime("%-m/%-d/%-y") %></dd>
+	</dl>
+<% end %>

@@ -13,7 +13,7 @@ class EmailsController < ApplicationController
   end
 
   def new
-    @email = Email.new
+    @email = current_user.emails.build
     respond_with(@email)
   end
 
@@ -21,7 +21,7 @@ class EmailsController < ApplicationController
   end
 
   def create
-    @email = Email.new(email_params)
+    @email = current_user.emails.build(email_params)
     @email.save
     respond_with(@email)
   end

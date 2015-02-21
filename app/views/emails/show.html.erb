@@ -21,4 +21,5 @@
 </p>
 
 <%= link_to 'Edit', edit_email_path(@email) %> |
-<%= link_to 'Back', emails_path %>
+<%= link_to 'Back', :back %> | 
+<%= link_to 'Delete', email_path(@email), method: :delete %>
