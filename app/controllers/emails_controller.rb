@@ -23,6 +23,7 @@ class EmailsController < ApplicationController
   def create
     @email = current_user.emails.build(email_params)
     @email.save
+    flash[:success] = "Your email has been created and is pending approval. Thank you."
     respond_with(@email)
   end
 

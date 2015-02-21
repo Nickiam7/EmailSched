@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 		def right_user?
 			@user = User.find(params[:id])
 			unless @user == current_user || user_signed_in? && current_user.admin?
-				flash[:notice] = "You are not the proper user!"
+				flash[:danger] = "Sorry, You do not have permission to access this page."
 				redirect_to root_url
 			end
 		end

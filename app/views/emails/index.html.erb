@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%= render partial: "shared/flash" %>
 <div class="uk-grid">
   <div class="uk-width-medium-1-1">
     <%= month_calendar events: @emails, table: {class: "uk-table table-shadow uk-animation-scale uk-animation-top-center"}, header: {class: "uk-text-center table-month-heading uk-margin-large-top"} do |date, emails| %>
