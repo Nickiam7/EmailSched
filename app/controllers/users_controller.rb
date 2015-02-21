@@ -11,16 +11,9 @@ class UsersController < ApplicationController
 		@email = @user.email
 	end
 
-	def admin?
-		@user = current_user
-			unless user_signed_in? && @user.admin?
-				redirect_to root_path
-				flash[:alert] = "You do not have permission to access this page."
-			end
-	end
 
 	private
-	
+
 		def admin?
 			@user = current_user
 				unless user_signed_in? && @user.admin?
