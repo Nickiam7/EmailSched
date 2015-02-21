@@ -7,7 +7,7 @@
 
 <p>
   <strong>Starts at:</strong>
-  <%= @email.starts_at %>
+  <%= @email.starts_at.strftime("%-m/%-d/%-y") %>
 </p>
 
 <p>
@@ -20,6 +20,11 @@
   <%= @email.pre %>
 </p>
 
-<%= link_to 'Edit', edit_email_path(@email) %> |
-<%= link_to 'Back', :back %> | 
-<%= link_to 'Delete', email_path(@email), method: :delete %>
+<% if user_signed_in? && current_user.admin? %>
+	<%= link_to 'Edit', edit_email_path(@email) %> |
+	<%= link_to 'Delete', email_path(@email), method: :delete %>
+<% else %>
+	<%= link_to 'Back', root_path %> 
+<% end %>
+<br>
+<%= current_user.id if user_signed_in? %>

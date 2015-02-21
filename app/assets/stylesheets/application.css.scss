@@ -192,8 +192,8 @@ body {
  }
 
  .uk-dropdown-navbar {
-    border-radius: 2px;
-    margin-top:8px;
+    border-radius: 0 0 2px 2px;
+    margin-top:18px;
  }
  
  .uk-dropdown-navbar:after {
@@ -201,12 +201,12 @@ body {
     border-radius: 1px;
     content: "";
     display: block;
-    height: 8px;
+    height: 13px;
     right: 25px;
     position: absolute;
-    top: -5px;
+    top: -8px;
     transform: rotate(45deg);
-    width: 8px;
+    width: 13px;
     border-top:1px solid #cbcbcb;
     border-left:1px solid #cbcbcb;
     z-index: -1

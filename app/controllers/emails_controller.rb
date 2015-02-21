@@ -1,20 +1,17 @@
 class EmailsController < ApplicationController
   before_action :set_email, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-  respond_to :html
 
   def index
     @emails = Email.all
-    respond_with(@emails)
   end
 
   def show
-    respond_with(@email)
+    @email = Email.find(params[:id])
   end
 
   def new
     @email = current_user.emails.build
-    respond_with(@email)
   end
 
   def edit
@@ -22,22 +19,36 @@ class EmailsController < ApplicationController
 
   def create
     @email = current_user.emails.build(email_params)
-    @email.save
-    flash[:success] = "Your email has been created and is pending approval. Thank you."
-    respond_with(@email)
+      if @email.save
+         redirect_to @email
+         flash[:success] = "Your email has been created and is pending approval. Thank you."
+      else
+        render "new"
+      end
   end
 
   def update
-    @email.update(email_params)
-    respond_with(@email)
+      if @email.update(email_params)
+        redirect_to @email
+        flash[:success] = "Your email has been updated."
+      else
+        render "edit"
+      end
   end
 
   def destroy
     @email.destroy
-    respond_with(@email)
+    if current_user.admin?
+      flash[:success] = "Admin has deleted email successfully"
+      redirect_to @email
+    else current_user == @email.user
+      flash[:success] = "Your Email has been deleted"
+      redirect_to @email
+    end
   end
 
   private
+
     def set_email
       @email = Email.find(params[:id])
     end
@@ -45,4 +56,15 @@ class EmailsController < ApplicationController
     def email_params
       params.require(:email).permit(:name, :starts_at, :qty, :pre)
     end
+
 end
+
+
+
+
+
+
+
+
+
+

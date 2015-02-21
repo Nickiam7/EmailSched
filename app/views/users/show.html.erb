@@ -1,9 +1,19 @@
-<h1>Hello, <%= @user.firstname %>  | <%= @user.emails.count %></h1>
+<%= render partial: "shared/flash" %>
+<div class="uk-grid uk-margin-large-top">
+<h1>Hello, <%= @user.firstname %></h1>  <span class="uk-align-right"><i class="uk-icon-envelope-o"></i> <%= @user.emails.count %>
+</div>
 <hr>
 
-<% @user.emails.each do |email| %>
-	<dl class="uk-description-list-line">
-		<dt><%= link_to email.name, email %></dt>
-		<dd>Date: <%= email.starts_at.strftime("%-m/%-d/%-y") %></dd>
-	</dl>
+<% if @user.emails.any? %>
+	<% @user.emails.each do |email| %>
+		<dl class="uk-description-list-line">
+			<dt><%= link_to email.name, email %></dt>
+			<dd>Date: <%= email.starts_at.strftime("%-m/%-d/%-y") %></dd>
+		</dl>
+	<% end %>
+<% else %>
+	<p>You don't have any emails scheduled yet.</p>
+	<%= link_to "Schedule Email", new_email_path, class: "uk-button uk-button-success uk-button-large" %>
 <% end %>
+
+

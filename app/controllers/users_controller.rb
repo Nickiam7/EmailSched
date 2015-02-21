@@ -16,10 +16,10 @@ class UsersController < ApplicationController
 
 		def admin?
 			@user = current_user
-				unless user_signed_in? && @user.admin?
-					redirect_to root_path
-					flash[:alert] = "You do not have permission to access this page."
-				end
+			unless user_signed_in? && @user.admin?
+				redirect_to root_path
+				flash[:alert] = "You do not have permission to access this page."
+			end
 		end
 
 		def right_user?
