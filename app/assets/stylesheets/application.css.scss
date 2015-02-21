@@ -148,6 +148,21 @@ body {
     box-shadow: 0 1px rgba(255, 255, 255, 0.2) inset, 0 0 0 1px rgba(255, 255, 255, 0.06) inset, 0 1px rgba(0, 0, 0, 0.04);
 }
 
+.past .date_number {    
+    background: #e0e0e0;
+    border-color:#b5b5b5;
+}
+
+.prev-month .date_number {    
+    background: #e0e0e0;
+    border-color:#b5b5b5;
+}
+
+.next-month .date_number {    
+    background: #73b9fb;
+    border-color:#73b9fb;
+}
+
 
 .uk-datepicker-table a.uk-active {
     background: linear-gradient(to bottom, #49a4fc, #208be7) repeat scroll 0 0 #2c92ed;
