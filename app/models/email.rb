@@ -3,6 +3,9 @@ class Email < ActiveRecord::Base
   	has_calendar
   	belongs_to :user
 
+  	scope :pending, -> { where(email_pending: true) }
+  	scope :approved, -> { where(email_pending: false) }
+
   	validates :starts_at, presence: :true
 
   	validate :email_cannot_be_scheduled_in_past

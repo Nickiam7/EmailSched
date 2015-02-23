@@ -23,6 +23,27 @@
     <%= f.label :qty %><br>
     <%= f.number_field :qty %>
   </div>
+
+<!--<div class="uk-form-row"> 
+  <label class="switch">
+      <input type="checkbox" class="switch-input" checked>
+        <span class="switch-label" data-on="On" data-off="Off"></span>
+        <span class="switch-handle"></span>
+  </label>
+</div>-->
+
+
+
+<% if current_user.admin? %>
+    <div class="uk-form-row">
+      <%= f.label :email_pending, class: "switch" do %>
+        <%= f.check_box :email_pending, class: "switch-input", data: "checked" %>        
+          <span class="switch-label" data-on="PEND" data-off="LIVE"></span>
+          <span class="switch-handle"></span>
+      <% end %>
+    </div>
+<% end %>
+
   <div class="uk-form-row">
     <%= f.label :pre %><br>
     <%= f.text_field :pre %>

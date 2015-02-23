@@ -3,7 +3,7 @@ class EmailsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @emails = Email.all
+    @emails = Email.approved
   end
 
   def show
@@ -54,7 +54,7 @@ class EmailsController < ApplicationController
     end
 
     def email_params
-      params.require(:email).permit(:name, :starts_at, :qty, :pre)
+      params.require(:email).permit(:name, :starts_at, :qty, :pre, :email_pending)
     end
 
 end
