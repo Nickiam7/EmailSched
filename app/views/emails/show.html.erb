@@ -1,5 +1,5 @@
-<%= render partial: "shared/flash" %>
 
+<%= render partial: "shared/flash" %>
 <p>
   <strong>Name:</strong>
   <%= @email.name %>
@@ -28,4 +28,5 @@
 	<%= link_to 'Back', root_path %> 
 <% end %>
 <br>
+
 <%= current_user.id if user_signed_in? %>

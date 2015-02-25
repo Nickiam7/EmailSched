@@ -1,18 +1,16 @@
 <nav class="uk-navbar uk-navbar-attached">
 	<div class="uk-container uk-container-center">
-		<%= image_tag("logo.png", size: "25x25", class: "uk-align-left") %>
-		<%= link_to "Email Calendar", root_path, class: "uk-navbar-brand" %>
-
+		<a href="/" class="uk-navbar-brand"><%= image_tag("logo.png", size: "25x25", style: "vertical-align: top;") %> Email Calendar</a>
 		<div class="uk-navbar-flip">
 			<ul class="uk-navbar-nav">
 				<li>
-					<%= link_to new_email_path do %>
-						<i class="uk-icon-envelope-o"></i> New Email
+					<%= link_to root_path do %>
+						<i class="uk-icon-calendar"></i> Calendar
 					<% end %>
 				</li>
 				<li>
-					<%= link_to root_path do %>
-						<i class="uk-icon-calendar"></i> Calendar
+					<%= link_to new_email_path do %>
+						<i class="uk-icon-envelope-o"></i> New Email
 					<% end %>
 				</li>
 			</ul>
@@ -24,9 +22,18 @@
 							<div class="uk-dropdown uk-dropdown-navbar uk-dropdown-flip" style="width:300px;">
 								<div class="uk-grid uk-dropdown-grid">
 		        					<div class="uk-width-1-2">
-										<div class="uk-panel">
-											<p><i class="uk-icon-user"></i> <%= current_user.firstname %> <%= current_user.lastname %>
-											</p>
+										<div class="uk-panel uk-panel-header">
+											<p><i class="uk-icon-user"></i> <%= current_user.firstname %> <%= current_user.lastname %></p>
+											
+											<div class="uk-grid-width-2">
+												<li class="uk-text-bold">My Emails</li>
+												<li>
+													 <i class="uk-icon-envelope uk-text-success"></i> <%= current_user.emails.approved.count %> Scheduled
+												</li>
+												<li>
+													<i class="uk-icon-envelope uk-text-danger"></i> <%= current_user.emails.pending.count %> Pending
+												</li>
+											</div>
 										</div>
 									</div>
 									<div class="uk-width-1-2">

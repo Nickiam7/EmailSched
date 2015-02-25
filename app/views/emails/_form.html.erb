@@ -15,34 +15,26 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
   <div class="uk-form-row">
-  <label for="email_starts_at">Starts at</label><br>
-    <input type="text" name="email[starts_at]" id="email_starts_at" data-uk-datepicker="{weekstart:0,}" autocomplete="off"/>
+  <label for="email_starts_at">Date</label><br>
+    <input type="text" name="email[starts_at]" id="email_starts_at" data-uk-datepicker="{weekstart:0,}" autocomplete="off" />
   </div>
+
   <div class="uk-form-row">
     <%= f.label :qty %><br>
     <%= f.number_field :qty %>
   </div>
 
-<!--<div class="uk-form-row"> 
-  <label class="switch">
-      <input type="checkbox" class="switch-input" checked>
-        <span class="switch-label" data-on="On" data-off="Off"></span>
-        <span class="switch-handle"></span>
-  </label>
-</div>-->
-
-
-
-<% if current_user.admin? %>
-    <div class="uk-form-row">
-      <%= f.label :email_pending, class: "switch" do %>
-        <%= f.check_box :email_pending, class: "switch-input", data: "checked" %>        
-          <span class="switch-label" data-on="PEND" data-off="LIVE"></span>
-          <span class="switch-handle"></span>
-      <% end %>
-    </div>
-<% end %>
+  <% if current_user.admin? %>
+      <div class="uk-form-row">
+        <%= f.label :email_pending, class: "switch" do %>
+          <%= f.check_box :email_pending, class: "switch-input", data: "checked" %>        
+            <span class="switch-label" data-off="Scheduled" data-on="Pending" ></span>
+            <span class="switch-handle"></span>
+        <% end %>
+      </div>
+  <% end %>
 
   <div class="uk-form-row">
     <%= f.label :pre %><br>

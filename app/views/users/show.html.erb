@@ -5,7 +5,7 @@
 <hr>
 
 <% if @user.emails.any? %>
-	<% @user.emails.each do |email| %>
+	<% @user.emails.approved.each do |email| %>
 		<dl class="uk-description-list-line">
 			<dt><%= link_to email.name, email %></dt>
 			<dd>Date: <%= email.starts_at.strftime("%-m/%-d/%-y") %></dd>
@@ -15,5 +15,12 @@
 	<p>You don't have any emails scheduled yet.</p>
 	<%= link_to "Schedule Email", new_email_path, class: "uk-button uk-button-success uk-button-large" %>
 <% end %>
-
+<p class="uk-text-strong">Pending</p>
+<hr>
+	<% @user.emails.pending.each do |email| %>
+		<dl class="uk-description-list-line">
+			<dt><%= link_to email.name, email %></dt>
+			<dd>Date: <%= email.starts_at.strftime("%-m/%-d/%-y") %></dd>
+		</dl>
+	<% end %>
 
