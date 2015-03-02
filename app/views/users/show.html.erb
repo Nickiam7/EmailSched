@@ -1,26 +1,58 @@
 <%= render partial: "shared/flash" %>
 <div class="uk-grid uk-margin-large-top">
-<h1>Hello, <%= @user.firstname %></h1>  <span class="uk-align-right"><i class="uk-icon-envelope-o"></i> <%= @user.emails.count %>
+<h1>Hello, <%= @user.firstname %></h1>  
+	<%= link_to new_email_path, class: "uk-button uk-button-success uk-float-right", style: "padding-left:10px;" do %>
+		<i class="uk-icon-envelope"></i>  Schedule Email
+	<% end %>
 </div>
 <hr>
 
-<% if @user.emails.any? %>
-	<% @user.emails.approved.each do |email| %>
-		<dl class="uk-description-list-line">
-			<dt><%= link_to email.name, email %></dt>
-			<dd>Date: <%= email.starts_at.strftime("%-m/%-d/%-y") %></dd>
-		</dl>
-	<% end %>
-<% else %>
-	<p>You don't have any emails scheduled yet.</p>
-	<%= link_to "Schedule Email", new_email_path, class: "uk-button uk-button-success uk-button-large" %>
-<% end %>
-<p class="uk-text-strong">Pending</p>
-<hr>
-	<% @user.emails.pending.each do |email| %>
-		<dl class="uk-description-list-line">
-			<dt><%= link_to email.name, email %></dt>
-			<dd>Date: <%= email.starts_at.strftime("%-m/%-d/%-y") %></dd>
-		</dl>
-	<% end %>
+<div class="uk-grild">
+	<div class="uk-width-medium-2-3">
+		<div class="uk-panel uk-panel-box uk-panel-box-secondary">
+	<ul class="uk-tab" data-uk-tab="{connect:'#emails', animation:'fade' }">
+	    <li><a href=""><i class="uk-icon-envelope uk-text-success"></i> Scheduled Emails</a></li>
+	    <li><a href=""><i class="uk-icon-envelope uk-text-danger"></i> Pending Emails</a></li>
+	   	<li><a href=""><i class="uk-icon-envelope uk-text-muted"></i> Archived Emails</a></li>
+	</ul>
+
+	<ul id="emails" class="uk-switcher uk-margin">
+	    <li>
+	    	<p><%= @user.emails.approved.count %> Scheduled Email</p>
+			<% if @user.emails.any? %>
+				<% @user.emails.approved.each do |email| %>
+					<dl class="uk-description-list-line">
+					<dt><%= link_to email.name, email %></dt>
+					<dd>Date: <%= email.starts_at.strftime("%-m/%-d/%-y") %></dd>
+					</dl>
+				<% end %>
+				<% else %>
+					<p>You don't have any emails scheduled yet.</p>
+					<%= link_to "Schedule Email", new_email_path, class: "uk-button uk-button-success uk-button-large" %>
+			<% end %>
+	    </li>
+	    <li>
+	    	<p class="uk-text-bold"><%= @user.emails.pending.count %> Pending Email</p>
+		    <% @user.emails.pending.each do |email| %>
+				<dl class="uk-description-list-line">
+					<dt><%= link_to email.name, email %></dt>
+					<dd>Date: <%= email.starts_at.strftime("%-m/%-d/%-y") %></dd>
+				</dl>
+			<% end %>
+	    </li>
+	    <li>
+	    	<p class="uk-text-bold"><%= @user.emails.pending.count %> Pending Email</p>
+		    <% @user.emails.each do |email| %>
+				<dl class="uk-description-list-line">
+					<dt><%= link_to email.name, email %></dt>
+					<dd>Date: <%= email.starts_at.strftime("%-m/%-d/%-y") %></dd>
+				</dl>
+			<% end %>
+	    </li>
+	</ul>
+		<div>
+	</div>
+</div>
+	<br><br><br>
+
 

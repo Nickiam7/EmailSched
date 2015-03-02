@@ -8,12 +8,12 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		@email = @user.emails.pending
+		@emails = Email.all
+		@email = @user.emails
 	end
 
 
 	private
-
 		def admin?
 			@user = current_user
 			unless user_signed_in? && @user.admin?
