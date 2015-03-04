@@ -15,7 +15,7 @@
 				</li>
 			</ul>
 			<div class="uk-navbar-content">
-				<div class="uk-button-group">
+				
 					<% if user_signed_in? %>
 						<div class="uk-button-dropdown" data-uk-dropdown>
 							<button class="uk-button uk-button-small" style="border-radius:3px;"><i class="uk-icon-th"></i> <%= current_user.firstname %></button>
@@ -60,14 +60,14 @@
 							</div>
 						</div>
 					<% else %>
-						<%= link_to new_user_session_path, class: "uk-button uk-button-small" do %>
+						<%= link_to new_user_session_path, class: "uk-button uk-button-success uk-button-small" do %>
 							<i class="uk-icon-lock"></i> Login
 						<% end %>
 						<%= link_to new_user_registration_path, class: "uk-button uk-button-small" do %>
 							<i class="uk-icon-sign-in"></i> Sign Up
 						<% end %>
 					<% end %>	
-				</div>
+				
 			</div>
 		</div>
 
