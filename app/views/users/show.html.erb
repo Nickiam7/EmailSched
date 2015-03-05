@@ -18,7 +18,7 @@
 
 	<ul id="emails" class="uk-switcher uk-margin">
 	    <li>
-	    	<p><%= @user.emails.approved.count %> Scheduled Email</p>
+	    	<p class="uk-text-bold"><%= @user.emails.approved.count %> Scheduled Email</p>
 			<% if @user.emails.any? %>
 				<% @user.emails.approved.each do |email| %>
 					<dl class="uk-description-list-line">
@@ -41,7 +41,7 @@
 			<% end %>
 	    </li>
 	    <li>
-	    	<p class="uk-text-bold"><%= @user.emails.pending.count %> Pending Email</p>
+	    	<p class="uk-text-bold"><%= @user.emails.pending.count %> Past Email</p>
 		    <% @user.emails.each do |email| %>
 				<dl class="uk-description-list-line">
 					<dt><%= link_to email.name, email %></dt>
