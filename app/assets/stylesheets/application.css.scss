@@ -16,6 +16,16 @@ body {
     border-radius:2px;
 }
 
+.uk-button-primary {
+    background-color: #61a3e4;
+    background-image: linear-gradient(to bottom, #61a3e4, #4183c4);
+}
+
+.uk-button-primary:hover, .uk-button-primary:focus, .uk-button-primary:active  {
+    background-color: #61a3e4;
+    background: #61a3e4;
+}
+
  /** Devise Errors **/
 #error_explanation {
     border-radius: 4px;
@@ -171,7 +181,7 @@ body {
 
 
 .uk-datepicker-table a.uk-active {
-    background: linear-gradient(to bottom, #49a4fc, #208be7) repeat scroll 0 0 #2c92ed;
+    background: linear-gradient(to bottom, #61a3e4, #4183c4) repeat scroll 0 0 #2c92ed;
     border-color: #1d87e2 #187ed9 #1670c1;
     border-image: none;
     border-style: solid;
