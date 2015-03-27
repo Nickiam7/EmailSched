@@ -6,6 +6,9 @@ class Email < ActiveRecord::Base
   	scope :pending, -> { where(email_pending: true) }
   	scope :approved, -> { where(email_pending: false) }
 
+    scope :email_sent, -> { where(email_pending: false) }
+
+
   	validates :starts_at, presence: :true
   	validate :email_cannot_be_scheduled_in_past
 
@@ -15,5 +18,6 @@ class Email < ActiveRecord::Base
 	       errors.add(:starts_at, "- Your email cannot be scheduled in the past. :(")
 	    end
   	end
+
 
 end

@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 	before_action :right_user?, only: :show
 	before_action :authenticate_user!, only: :show
 
+
 	def index
 		@users = User.all
 	end
@@ -18,7 +19,7 @@ class UsersController < ApplicationController
 			@user = current_user
 			unless user_signed_in? && @user.admin?
 				redirect_to root_path
-				flash[:alert] = "You do not have permission to access this page."
+				flash[:danger] = "You do not have permission to access this page."
 			end
 		end
 

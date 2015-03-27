@@ -1,4 +1,4 @@
-class EmailsController < ApplicationController
+  class EmailsController < ApplicationController
   before_action :set_email, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
@@ -54,7 +54,7 @@ class EmailsController < ApplicationController
     end
 
     def email_params
-      params.require(:email).permit(:name, :starts_at, :qty, :pre, :email_pending)
+      params.require(:email).permit(:name, :starts_at, :qty, :pre, :email_pending, :email_sent)
     end
 
 end

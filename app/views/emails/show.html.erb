@@ -1,14 +1,14 @@
 
 <%= render partial: "shared/flash" %>
 <p>
-	<%= @email.user.firstname %>
+	<%= @email.user.firstname %><br>
   <strong>Name:</strong>
   <%= @email.name %>
 </p>
 
 <p>
   <strong>Starts at:</strong>
-  <%= @email.starts_at.strftime("%-m/%-d/%-y") %>
+  <%= @email.starts_at.strftime("%x") %>
 </p>
 <% if user_signed_in? && current_user || user_signed_in? && current_user.admin? %>
 <p>

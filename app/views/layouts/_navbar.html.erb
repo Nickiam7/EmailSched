@@ -18,7 +18,7 @@
 				
 					<% if user_signed_in? %>
 						<div class="uk-button-dropdown" data-uk-dropdown>
-							<button class="uk-button uk-button-success uk-button-small" style="border-radius:3px;"><i class="uk-icon-th"></i> <%= current_user.firstname %></button>
+							<button class="uk-button uk-button-primary uk-button-small"><i class="uk-icon-th"></i> <%= current_user.firstname %></button>
 							<div class="uk-dropdown uk-dropdown-navbar uk-dropdown-flip" style="width:300px;">
 								<div class="uk-grid uk-dropdown-grid">
 		        					<div class="uk-width-1-2">
@@ -31,7 +31,7 @@
 													 <i class="uk-icon-envelope uk-text-success"></i> <%= current_user.emails.approved.count %> Scheduled
 												</li>
 												<li>
-													<i class="uk-icon-envelope uk-text-danger"></i> <%= current_user.emails.pending.count %> Pending
+													<i class="uk-icon-envelope uk-text-warning"></i> <%= current_user.emails.pending.count %> Pending
 												</li>
 											</div>
 										</div>
