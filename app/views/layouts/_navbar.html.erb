@@ -23,8 +23,9 @@
 								<div class="uk-grid uk-dropdown-grid">
 		        					<div class="uk-width-1-2">
 										<div class="uk-panel uk-panel-header">
-											<p><i class="uk-icon-user"></i> <%= current_user.firstname %> <%= current_user.lastname %></p>
-											
+											<p><i class="uk-icon-user"></i> <%= current_user.firstname %> <%= current_user.lastname %>
+											<i class="uk-icon-home"></i><span class="uk-text-small"> <%=current_user.division %></span></p>
+											<hr>
 											<div class="uk-grid-width-2">
 												<li class="uk-text-bold">My Emails</li>
 												<li>

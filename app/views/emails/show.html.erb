@@ -30,4 +30,4 @@
 <% end %>
 <br>
 
-<%= current_user.id if user_signed_in? %>
+  <%= @email.user.firstname %>: <%= current_user.id if user_signed_in? %>

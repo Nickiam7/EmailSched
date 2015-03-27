@@ -7,11 +7,19 @@
 <%= form_for(resource, as: resource_name, html: { class: "uk-form" }, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
   <%= render partial: "shared/devise_flash" %>
- <div class="uk-form-row">
-    <%= f.text_field :firstname, placeholder: "First Name", class: "uk-width-1-1" %>
-  </div>
   <div class="uk-form-row">
-    <%= f.text_field :lastname, placeholder: "Last Name", class: "uk-width-1-1" %>
+  <div class="uk-grid">
+        <div class="uk-width-1-2"><%= f.text_field :firstname, placeholder: "First Name", class: "uk-width-1-1" %></div>
+        <div class="uk-width-1-2"><%= f.text_field :lastname, placeholder: "Last Name", class: "uk-width-1-1" %></div>
+    </div>
+  </div>
+
+  <div class="uk-form-row">
+    <div class="uk-button uk-form-select uk-width-1-1" data-uk-form-select>
+      <span></span>
+      <i class="uk-icon-sort uk-margin-left"></i>
+        <%= f.select(:division, options_for_select([["Communications & Marketing", "DoCM"],["Executive Office", "Executive Office"],["Finance & Administration", "Finance & Admin"],["Health Administration Press", "HAP"],["Management Information Services", "MIS"],["Member Services", "Member Services"],["Professional Development", "DoPD"],["Regional Services", "Regional Services"]], selected: f.object.division)) %>
+    </div>
   </div>
 
   <div class="uk-form-row">
