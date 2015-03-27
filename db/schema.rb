@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327172802) do
+ActiveRecord::Schema.define(version: 20150327205956) do
 
   create_table "emails", force: :cascade do |t|
     t.string   "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150327172802) do
     t.datetime "updated_at",                   null: false
     t.integer  "user_id"
     t.boolean  "email_pending", default: true
+    t.text     "notes"
   end
 
   add_index "emails", ["user_id"], name: "index_emails_on_user_id"

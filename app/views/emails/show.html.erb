@@ -10,12 +10,15 @@
   <strong>Starts at:</strong>
   <%= @email.starts_at.strftime("%x") %>
 </p>
-<% if user_signed_in? && current_user || user_signed_in? && current_user.admin? %>
+
+<p>
+  <strong>Status:</strong>
+  <%= @email.email_pending %>
+
 <p>
   <strong>Qty:</strong>
   <%= @email.qty %>
 </p>
-<% end %>
 
 <p>
   <strong>Pre:</strong>

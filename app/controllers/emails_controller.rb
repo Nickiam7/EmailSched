@@ -40,10 +40,7 @@
     @email.destroy
     if current_user.admin?
       flash[:success] = "Admin has deleted email successfully"
-      redirect_to @email
-    else current_user == @email.user
-      flash[:success] = "Your Email has been deleted"
-      redirect_to @email
+      redirect_to @email.user
     end
   end
 
