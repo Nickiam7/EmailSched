@@ -9,7 +9,8 @@ class Email < ActiveRecord::Base
     scope :email_sent, -> { where(email_pending: false) }
 
 
-  	validates :starts_at, presence: :true
+  	validates :starts_at, presence: true
+    validates :name, presence: true
   	validate :email_cannot_be_scheduled_in_past
 
 

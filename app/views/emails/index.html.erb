@@ -8,7 +8,7 @@
           <% emails.each do |email| %>
             <li>
               <% if user_signed_in? && current_user.admin? %>
-                  <i class="uk-icon-envelope curse" data-uk-tooltip="{pos:'left'}" title="Quantity: <%= email.pre %> <%= email.qty %>"></i> <%= link_to email.name, email %>
+                  <i class="uk-icon-envelope curse" data-uk-tooltip="{pos:'left'}" title="Quantity: <%= email.pre %> <%= number_with_delimiter(email.qty) %>"></i> <%= link_to email.name, email %>
                 <% else %>
                   <i class="uk-icon-envelope-o"></i> <%= link_to email.name, email %>
               <% end %>
