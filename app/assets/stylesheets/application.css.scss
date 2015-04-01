@@ -55,6 +55,32 @@ body {
     color: #a4a4a4;
 }
 
+.uk-panel-box.panel-padding-top {
+  padding-top:0;
+}
+
+.uk-tab > li > a {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: transparent;
+    border-image: none;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 0 1px 0;
+    color: #0077dd;
+    display: block;
+    padding: 15px 12px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #ffffff;
+}
+
+.uk-tab > li:not(.uk-active) > a:hover, .uk-tab > li:not(.uk-active) > a:focus {
+    margin-bottom: 1px;
+    padding-bottom: 14px;
+}
+
 /** END Devise **/
 
 .uk-form input:not([type]), .uk-form input[type="text"], .uk-form input[type="password"], .uk-form input[type="datetime"], .uk-form input[type="datetime-local"], .uk-form input[type="date"], .uk-form input[type="month"], .uk-form input[type="time"], .uk-form input[type="week"], .uk-form input[type="number"], .uk-form input[type="email"], .uk-form input[type="url"], .uk-form input[type="search"], .uk-form input[type="tel"], .uk-form input[type="color"] {

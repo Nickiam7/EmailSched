@@ -17,6 +17,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "uikit-sass-rails"
 gem 'devise', '~> 3.4.1'
 gem 'simple_calendar', '~> 1.1.10'
+gem 'will_paginate', '~> 3.0.6'
 
 group :development, :test do
   gem 'byebug'

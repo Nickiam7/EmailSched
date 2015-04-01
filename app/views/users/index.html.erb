@@ -3,7 +3,6 @@
 <% @users.each do |user| %>
 	<%= link_to user.firstname, user %> | <%= user.email %><br>
 <% end %>
-
 <br><br>
 <hr>
 <% if user_signed_in? %>

@@ -11,12 +11,13 @@ class Email < ActiveRecord::Base
 
   	validates :starts_at, presence: true
     validates :name, presence: true
+    validates :qty, presence: true
   	validate :email_cannot_be_scheduled_in_past
 
 
   	def email_cannot_be_scheduled_in_past
 	    if starts_at.present? && starts_at < Date.today
-	       errors.add(:starts_at, "- Your email cannot be scheduled in the past. :(")
+        errors[:starts_at] = "- Your email cannot be scheduled in the past. :("
 	    end
   	end
 
