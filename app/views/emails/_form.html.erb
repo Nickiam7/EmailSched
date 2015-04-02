@@ -31,11 +31,11 @@
                 <span class="switch-label" data-on="Yes" data-off="No"></span>
                 <span class="switch-handle"></span>
                 <% end %>
-                <i class="uk-icon-question-circle curse" data-uk-tooltip="" title="Mark yes if scheduling an email "></i>
+                <i class="uk-icon-question-circle uk-margin-small-left curse" data-uk-tooltip="" title="Mark yes if scheduling an email "></i>
               </div>
               <div class="uk-width-1-3 uk-text-right">
                 <%= f.text_field :number_of_emails, placeholder: "# of Emails", class: "uk-width-3-4" %>
-                <i class="uk-icon-question-circle curse" data-uk-tooltip="" title="Enter the number of emails if your scheduling more than one."></i>
+                <i class="uk-icon-question-circle uk-margin-small-left curse" data-uk-tooltip="" title="Enter the number of emails if your scheduling more than one."></i>
               </div>
             </div>
             <!--END Nested Grid (Date/Prefix/Quantity)-->
@@ -50,7 +50,7 @@
               <i class="uk-icon-sort uk-margin-left"></i>
               <%= f.select(:pre, options_for_select([["Greater Than", ">"],["Less Than", "<"],["Equal To", "="]], selected: f.object.pre)) %>
             </div>
-            <i class="uk-icon-long-arrow-right"></i>
+            <i class="uk-icon-long-arrow-right uk-margin-small-left"></i>
           </div>
           <div class="uk-width-1-3 uk-text-right"> 
             <%= f.number_field :qty, placeholder: "Enter a Quantity", class: "uk-width-1-1" %>
@@ -58,6 +58,7 @@
           <!--End 1/3-->
         </div>
         <!--End Grid-->
+        <hr>
       </div>
       <!--End Panel-->
       <div class="uk-panel uk-panel-header uk-panel-box uk-panel-box-secondary">

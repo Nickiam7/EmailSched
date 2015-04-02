@@ -29,7 +29,9 @@
 					<dd><%= truncate(email.notes, length: 250, separator: ' ') %></dd>
 					</dl>
 				<% end %>
-				<%= will_paginate @emails_approved %>
+				<div class="uk-text-center">
+					<%= will_paginate @emails_approved %>
+				</div>
 			<% else %>
 				<p>You don't have any emails scheduled yet.</p>
 				<%= link_to "Schedule Email", new_email_path, class: "uk-button uk-button-success uk-button-large" %>
@@ -47,7 +49,6 @@
 					<dd><%= truncate(email.notes, length: 250, separator: ' ') %></dd>
 				</dl>
 			<% end %>
-			<%= will_paginate @emails_pending %>
 	    </li>
 	    <li>
 	    	<p class="uk-text-bold"><%= pluralize(@user.emails.email_sent.count, "Email") %> Sent:<br>
