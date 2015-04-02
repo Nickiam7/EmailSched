@@ -1,3 +1,5 @@
+
+
 <%= render partial: "shared/flash" %>
 <div class="uk-grid uk-margin-large-top">
 <h1><i class="uk-icon-dashboard"></i> Hello, <%= @user.firstname %></h1>  
@@ -10,61 +12,115 @@
 <div class="uk-grid">
 	<div class="uk-width-medium-2-3">
 		<div class="uk-panel uk-panel-box uk-panel-box-secondary panel-padding-top">
-	<ul class="uk-tab" data-uk-tab="{connect:'#emails', animation:'fade' }">
-	    <li><a href=""><i class="uk-icon-envelope uk-text-success"></i> Scheduled Emails</a></li>
-	    <li><a href=""><i class="uk-icon-envelope uk-text-warning"></i> Pending Emails</a></li>
-	   	<li><a href=""><i class="uk-icon-envelope uk-text-muted"></i> Archived Emails</a></li>
-	</ul>
-
-	<ul id="emails" class="uk-switcher uk-margin">
-	    <li>
-	    	<p class="uk-text-bold"><%= pluralize(@user.emails.approved.count, "Email") %> Scheduled:<br>
-	    	<span class="uk-text-small"> These emails will go out as scheduled. If for some reason they cannot go out as scheduled, you will be notified.</span></p>
-	    	<hr>
-			<% if @user.emails.any? %>
-				<% @emails_approved.each do |email| %>
-					<dl class="uk-description-list-line" style="border-bottom: 1px solid #eee;">
-					<dt><%= link_to email.name, email %></dt>
-					<dd>Date: <%= email.starts_at.strftime("%x") %></dd>
-					<dd><%= truncate(email.notes, length: 250, separator: ' ') %></dd>
-					</dl>
-				<% end %>
-				<div class="uk-text-center">
-					<%= will_paginate @emails_approved %>
-				</div>
-			<% else %>
-				<p>You don't have any emails scheduled yet.</p>
-				<%= link_to "Schedule Email", new_email_path, class: "uk-button uk-button-success uk-button-large" %>
-			<% end %>
-	    </li>
-	    <li>
-	    	<p class="uk-text-bold"><%= pluralize(@user.emails.pending.count, "Email") %> Pending:<br>
-			<span class="uk-text-small"> These emails are pending review and have not been scheduled yet. You will only be notified if your emails has been declined.</span></p>
-			<hr>
-	    	</p>
-		    <% @emails_pending.each do |email| %>
-				<dl class="uk-description-list-line" style="border-bottom: 1px solid #eee;">
-					<dt><%= link_to email.name, email %></dt>
-					<dd>Date: <%= email.starts_at.strftime("%x") %></dd>
-					<dd><%= truncate(email.notes, length: 250, separator: ' ') %></dd>
-				</dl>
-			<% end %>
-	    </li>
-	    <li>
-	    	<p class="uk-text-bold"><%= pluralize(@user.emails.email_sent.count, "Email") %> Sent:<br>
-			<span class="uk-text-small"> These emails have been successfully sent.</span></p>
-			<hr>
-		    <% @user.emails.each do |email| %>
-				<dl class="uk-description-list-line">
-					<dt><%= link_to email.name, email %></dt>
-					<dd>Date: <%= email.starts_at.strftime("%x") %></dd>
-				</dl>
-			<% end %>
-	    </li>
-	</ul>
-		<div>
+			<ul class="uk-tab" data-uk-tab="{connect:'#emails', animation:'fade' }">
+			    <li><a href=""><i class="uk-icon-envelope uk-text-success"></i> Scheduled Emails</a></li>
+			    <li><a href=""><i class="uk-icon-envelope uk-text-warning"></i> Pending Emails</a></li>
+			   	<li><a href=""><i class="uk-icon-envelope uk-text-muted"></i> Archived Emails</a></li>
+			</ul>
+			<!--End Tabs-->
+			<ul id="emails" class="uk-switcher uk-margin">
+			    <li>
+			    	<p class="uk-text-bold"><%= pluralize(@user.emails.approved.count, "Email") %> Scheduled:<br>
+			    	<span class="uk-text-small"> These emails will go out as scheduled. If for some reason they cannot go out as scheduled, you will be notified.</span></p>
+			    	<hr>
+					<% if @user.emails.any? %>
+						<% @emails_approved.each do |email| %>
+							<dl class="uk-description-list-line" style="border-bottom: 1px solid #eee;">
+							<dt><%= link_to email.name, email %></dt>
+							<dd>Date: <%= email.starts_at.strftime("%x") %></dd>
+							<dd><%= truncate(email.notes, length: 250, separator: ' ') %></dd>
+							</dl>
+						<% end %>
+						<div class="uk-text-center">
+							<%= will_paginate @emails_approved %>
+						</div>
+					<% else %>
+						<p>You don't have any emails scheduled yet.</p>
+						<%= link_to "Schedule Email", new_email_path, class: "uk-button uk-button-success uk-button-large" %>
+					<% end %>
+			    </li>
+			    <li>
+			    	<p class="uk-text-bold"><%= pluralize(@user.emails.pending.count, "Email") %> Pending:<br>
+					<span class="uk-text-small"> These emails are pending review and have not been scheduled yet. You will only be notified if your emails has been declined.</span></p>
+					<hr>
+			    	</p>
+				    <% @emails_pending.each do |email| %>
+						<dl class="uk-description-list-line" style="border-bottom: 1px solid #eee;">
+							<dt><%= link_to email.name, email %></dt>
+							<dd>Date: <%= email.starts_at.strftime("%x") %></dd>
+							<dd><%= truncate(email.notes, length: 250, separator: ' ') %></dd>
+						</dl>
+					<% end %>
+			    </li>
+			    <li>
+			    	<p class="uk-text-bold"><%= pluralize(@user.emails.email_sent.count, "Email") %> Sent:<br>
+					<span class="uk-text-small"> These emails have been successfully sent.</span></p>
+					<hr>
+				    <% @user.emails.each do |email| %>
+						<dl class="uk-description-list-line">
+							<dt><%= link_to email.name, email %></dt>
+							<dd>Date: <%= email.starts_at.strftime("%x") %></dd>
+						</dl>
+					<% end %>
+			    </li>
+			</ul>
+			<!--End Tab Area-->
+		</div>
+		<!--End Panel -->
 	</div>
+	<!--End 2/3 -->
+
+	<div class="uk-width-medium-1-3">
+		<% if @user.emails.any? %>
+			<div id="userEmails" class="uk-hidden-small"></div>
+		<% else %>
+			<div id="emptyChart" class="uk-hidden-small"></div>
+		<% end %>
+		<hr>
+	</div>
+	
+
+	<!--End 1/3 -->
 </div>
+<!--End Grid-->
 	<br><br><br>
+<script>
+var chart = c3.generate({
+	bindto: '#userEmails',
+    data: {
+        columns: [
+            ['Approved', "<%= @emails_approved.count %>"],
+            ['Pending', "<%= @emails_pending.count %>"],
+        ],
+        type : 'donut',
+        colors: {
+           Approved: '#6fac34',
+           Pending: '#e28327'
+         }
+    },
+    donut: {
+        title: "Your Email Breakdown:",
+    }
+});
+</script>
+
+<script>
+var chart = c3.generate({
+	bindto: '#emptyChart',
+    data: {
+        columns: [
+            ['Empty', "1"],
+        ],
+        type : 'donut',
+        colors: {
+           Empty: '#eeeeee',
+         }
+    },
+    donut: {
+        title: "No Emails",
+    }
+});
+</script>
+
 
 

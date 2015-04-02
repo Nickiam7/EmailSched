@@ -1,5 +1,5 @@
 
-<h2 class="uk-margin-top">Edit <%= resource_name.to_s.humanize %></h2>
+<h2 class="uk-margin-top"><i class="uk-icon-user"></i> Edit your account, <%= @user.firstname %></h2>
 <hr>
 <div class="uk-grid">
 <div class="uk-width-medium-1-3 uk-push-1-3">
@@ -46,9 +46,8 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<hr class="uk-margin-top">
+<p>You can cancel your account by clicking the the button below. <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "uk-button uk-button-danger uk-button-mini" %></p>
 </div>
 <!--End 1/3 push 2/3-->
 </div>
