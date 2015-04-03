@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@emails = @user.emails
 		@emails_approved = @user.emails.approved.paginate(page: params[:page], per_page: 5)
 		@emails_pending = @user.emails.pending
 	end

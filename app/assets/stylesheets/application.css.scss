@@ -30,33 +30,10 @@ a {
     background: #61a3e4;
 }
 
- /** Devise Errors **/
-#error_explanation {
-    border-radius: 4px;
-    margin-bottom: 15px;
-    padding: 10px;
-    text-shadow: 0 1px 0 #ffffff;
-    background: none repeat scroll 0 0 #fff1f0;
-    border: 1px solid #f3c0b5;
-    color: #d85030;
-}
-
-#error_explanation h2 {
-    color: #d85030;
-}
-
-.devise_links {
-    color:#b5c7cc;
-    font-size: 9px;
-}
-
-.devise_links a {
-    color:#cad6da;
-    font-size: 9px;
-}
-
 .uk-panel-box-secondary {
     color: #a4a4a4;
+    border-radius: 2px;
+    background-color: #fdfdfd;
 }
 
 .uk-panel-box.panel-padding-top {
@@ -84,6 +61,32 @@ a {
     margin-bottom: 1px;
     padding-bottom: 14px;
 }
+
+ /** Devise Errors **/
+#error_explanation {
+    border-radius: 4px;
+    margin-bottom: 15px;
+    padding: 10px;
+    text-shadow: 0 1px 0 #ffffff;
+    background: none repeat scroll 0 0 #fff1f0;
+    border: 1px solid #f3c0b5;
+    color: #d85030;
+}
+
+#error_explanation h2 {
+    color: #d85030;
+}
+
+.devise_links {
+    color:#b5c7cc;
+    font-size: 9px;
+}
+
+.devise_links a {
+    color:#cad6da;
+    font-size: 9px;
+}
+
 
 /** END Devise **/
 

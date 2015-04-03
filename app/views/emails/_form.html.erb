@@ -19,7 +19,7 @@
           <%= f.text_field :name, placeholder: "Enter a title", class: "uk-width-1-1 uk-margin-bottom" %>
         </div>
             <!--Nested Grid (Date/Prefix/Quantity)-->
-            <hr>
+            
             <div class="uk-grid">
               <div class="uk-width-1-3">
                 <%= f.text_field :starts_at, class: "uk-width-1-1", data: { uk_datepicker: "{weekstart:0}" }, placeholder: "Select a date" %>
@@ -39,7 +39,7 @@
               </div>
             </div>
             <!--END Nested Grid (Date/Prefix/Quantity)-->
-       
+       <hr>
         <div class="uk-grid">
           <div class="uk-width-1-3">
             <%= f.text_field :target_audience, placeholder: "Target Audience" %>
@@ -58,12 +58,17 @@
           <!--End 1/3-->
         </div>
         <!--End Grid-->
-        <hr>
+        
       </div>
       <!--End Panel-->
       <div class="uk-panel uk-panel-header uk-panel-box uk-panel-box-secondary">
         <h3 class="uk-panel-title">Project Info</h3>
         <%= f.text_area(:notes, placeholder: "Enter Any Email Notes", class: "uk-width-1-1", style: "min-height:100px;") %>
+        <div class="uk-grid uk-margin-top">
+          <div class="uk-width-medium-1-2">
+            <%= f.text_field :file_location, placeholder: "Enter path to files", class: "uk-width-1-1" %>
+          </div>
+        </div>
       </div>
       <!--End Project Info Panel-->
       <div class="uk-panel uk-panel-header uk-panel-box uk-panel-box-secondary">

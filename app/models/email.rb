@@ -9,6 +9,7 @@ class Email < ActiveRecord::Base
     scope :email_sent, -> { where(email_pending: false) }
 
 
+
   	validates :starts_at, presence: true
     validates :name, presence: true
     validates :qty, presence: true

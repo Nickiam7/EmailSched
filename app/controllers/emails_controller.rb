@@ -51,7 +51,7 @@
     end
 
     def email_params
-      params.require(:email).permit(:name, :starts_at, :qty, :pre, :email_pending, :email_sent, :notes, :campaign, :number_of_emails)
+      params.require(:email).permit(:name, :starts_at, :qty, :pre, :email_pending, :email_sent, :notes, :campaign, :number_of_emails, :file_location)
     end
 
 end
