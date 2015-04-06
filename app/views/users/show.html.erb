@@ -95,7 +95,6 @@
 		<% else %>
 			<div id="emptyChart" class="uk-hidden-small"></div>
 		<% end %>
-		<div id="chart4"></div>
 		<hr>
 		<div class="uk-grid uk-text-center uk-animation-slide-bottom">
 			<div class="uk-width-1-3">
@@ -139,11 +138,13 @@ var chart = c3.generate({
         title: "Your Email Breakdown:",
     }
 });
+</script>
+<script>
 var chart = c3.generate({
 	bindto: '#emptyChart',
     data: {
         columns: [
-            ['Empty', "1"],
+            ['Empty', "10"],
         ],
         type : 'donut',
         colors: {
