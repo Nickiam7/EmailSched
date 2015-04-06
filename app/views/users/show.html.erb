@@ -23,14 +23,35 @@
 			    	<hr>
 					<% if @user.emails.any? %>
 						<% @emails_approved.each do |email| %>
-							<dl class="uk-description-list-line" style="border-bottom: 1px solid #eee;">
-							<dt><%= link_to email.name, email %></dt>
-							<dd>Date: <%= email.starts_at.strftime("%x") %></dd>
-							<dd><%= truncate(email.notes, length: 250, separator: ' ') %></dd>
-							</dl>
+							<div class="uk-grid">
+								<div class="uk-width-medium-3-4">
+									<dl class="uk-description-list-line">
+										<dt><%= link_to email.name, email %></dt>
+										<dd>Date: <%= email.starts_at.strftime("%x") %></dd>
+										<dd><%= truncate(email.notes, length: 250, separator: ' ') %></dd>
+									</dl>
+								</div>
+								<div class="uk-width-medium-1-4 uk-text-right" style=" padding:20px 0 20px 20px;">
+									<div class="uk-button-group">
+										<%= link_to email, class: "uk-button uk-button-mini uk-vertical-align-bottom" do %>
+											<i class="uk-icon-eye"></i>
+										<% end %>
+										<%= link_to edit_email_path(email), class: "uk-button uk-button uk-button-mini uk-vertical-align-bottom" do %>
+											<i class="uk-icon-edit"></i>
+										<% end %>
+										<%= link_to email_path(email), method: :delete, class: "uk-button uk-button-danger uk-button-mini uk-vertical-align-bottom" do %>
+											<i class="uk-icon-times-circle-o"></i>
+										<% end %>
+									</div>
+								</div>
+							</div>
 						<% end %>
-						<div class="uk-text-center">
-							<%= will_paginate @emails_approved %>
+						<div class="uk-grid">
+							<div class="uk-width-medium-3-4">
+								<ul class="uk-pagination">
+									<li><%= will_paginate @emails_approved, container: false %></li>
+								</ul>
+							</div>
 						</div>
 					<% else %>
 						<p>You don't have any emails scheduled yet.</p>
@@ -76,25 +97,25 @@
 		<% end %>
 		<div id="chart4"></div>
 		<hr>
-		<div class="uk-grid uk-text-center">
+		<div class="uk-grid uk-text-center uk-animation-slide-bottom">
 			<div class="uk-width-1-3">
 				<div class="uk-panel uk-panel-box uk-panel-box-secondary">
-					<span class="uk-text-large uk-text-strong uk-text-success"><%= @emails_approved.count %></span><br>Approved
+					<span class="uk-text-large uk-text-strong uk-text-success" style="font-weight:900;"><%= @emails_approved.count %></span><br>Approved
 				</div>
 			</div>
 			<div class="uk-width-1-3">
 				<div class="uk-panel uk-panel-box uk-panel-box-secondary">
-					<span class="uk-text-large uk-text-strong uk-text-warning"><%= @emails_pending.count %></span><br>Pending
+					<span class="uk-text-large uk-text-strong uk-text-warning" style="font-weight:900;"><%= @emails_pending.count %></span><br>Pending
 				</div>
 			</div>
 			<div class="uk-width-1-3">
 				<div class="uk-panel uk-panel-box uk-panel-hover uk-panel-box-secondary">
-					<span class="uk-text-large uk-text-strong uk-text-primary"><%= @user.emails.count %></span><br>All
+					<span class="uk-text-large uk-text-strong uk-text-primary" style="font-weight:900;"><%= @user.emails.count %></span><br>All
 				</div>
 			</div>
 		</div>
-		<hr>
 		<!--End Nested Grid-->
+		<hr>
 	</div>
 	<!--End 1/3 -->
 </div>
