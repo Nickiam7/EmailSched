@@ -1,6 +1,6 @@
 <%= render partial: "shared/flash" %>
 <div class="uk-grid uk-margin-large-top">
-<h1><i class="uk-icon-dashboard"></i> Hello, <%= @user.firstname %></h1>  
+<h1><i class="uk-icon-dashboard"></i> Hello, <%= @user.firstname %></h1>
 	<%= link_to new_email_path, class: "uk-button uk-button-success uk-float-right", style: "padding-left:10px;" do %>
 		<i class="uk-icon-envelope"></i>  Schedule Email
 	<% end %>
@@ -13,7 +13,7 @@
 			<ul class="uk-tab" data-uk-tab="{connect:'#emails', animation:'fade' }">
 			    <li><a href=""><i class="uk-icon-envelope uk-text-success"></i> Scheduled Emails</a></li>
 			    <li><a href=""><i class="uk-icon-envelope uk-text-warning"></i> Pending Emails</a></li>
-			   	<li><a href=""><i class="uk-icon-envelope uk-text-muted"></i> Archived Emails</a></li>
+			   	<!--<li><a href=""><i class="uk-icon-envelope uk-text-muted"></i> Archived Emails</a></li>-->
 			</ul>
 			<!--End Tabs-->
 			<ul id="emails" class="uk-switcher uk-margin">
