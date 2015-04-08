@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150403022133) do
+ActiveRecord::Schema.define(version: 20150408115740) do
 
   create_table "emails", force: :cascade do |t|
     t.string   "name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150403022133) do
     t.string   "target_audience"
     t.integer  "number_of_emails"
     t.string   "file_location"
+    t.string   "email_cat"
   end
 
   add_index "emails", ["user_id"], name: "index_emails_on_user_id"
